@@ -10,12 +10,14 @@ async function run() {
     const octokit = new github.GitHub(token);
 
     const newIssue = await octokit.issues.create({
-        repo: github.context.repo.repo,
-        owner: github.context.repo.owner,
-        title: issueTitle,
-        body: jokeBody
+      repo: github.context.repo.repo,
+      owner: github.context.repo.owner,
+      title: issueTitle,
+      body: jokeBody
     });
-  } catch(error) {
+  } catch (error) {
     core.setFailed(error.message);
   }
 }
+
+run();
