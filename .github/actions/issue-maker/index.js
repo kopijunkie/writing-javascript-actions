@@ -13,7 +13,7 @@ async function run() {
       repo: github.context.repo.repo,
       owner: github.context.repo.owner,
       title: issueTitle,
-      body: "Test jokeBody",
+      body: jokeBody,
     });
   } catch (error) {
     core.setFailed(error.message);
